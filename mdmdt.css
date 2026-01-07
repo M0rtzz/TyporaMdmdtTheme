@@ -2,13 +2,13 @@
  * ------------------------------------------------------------------------
  * mdmdt.css
  * (c) 2024-2025
- * Author: cayxc
- * Homepage:  https://gitee.com/cayxc/mdmdt  https://github.com/cayxc/Mdmdt
+ * Author: M0rtzz
+ * Homepage: https://github.com/M0rtzz/TyporaMdmdtTheme
  * License: Apache-2.0
  * ------------------------------------------------------------------------
-*/
+ */
 :root {
-  /*--bg-color: rgb(250, 250, 250);*/
+  /* --bg-color: rgb(250, 250, 250); */
   --bg-color: rgb(250, 250, 252);
   --bg-color2: rgb(236, 236, 238);
 
@@ -52,13 +52,25 @@
   --item-hover-bg-color: var(--bg-color2);
   --item-hover-text-color: var(--color-1);
   --select-text-bg-color: var(--color-1-0-a);
-  --monospace: "JetBrains Mono", "Source Code Pro", "Fira Code", Consolas, Inconsolata, "Cascadia Code", Monaco, "Ubuntu Mono", monospace;
+  --monospace: "Fira Code", "JetBrains Mono", "Source Code Pro", Consolas, Inconsolata, "Cascadia Code", Monaco, "Ubuntu Mono", monospace;
 
-  /*--mermaid-theme: neutral;*/ /*or base, dark, forest, neutral, night*/
+  /* --mermaid-theme: neutral; */ /* or base, dark, forest, neutral, night */
   --mermaid-font-family: "trebuchet ms", verdana, arial, sans-serif;
   --mermaid-sequence-numbers: on;
   --mermaid-flowchart-curve: linear;
   --mermaid--gantt-left-padding: 75;
+
+  /* Fira Code 启用连字 */
+  --code-ligatures: 1;
+  --code-calt: "calt";
+}
+
+code,
+pre,
+.md-fences,
+.CodeMirror,
+.cm-s-inner {
+  font-feature-settings: var(--code-calt) var(--code-ligatures);
 }
 
 html {
@@ -96,7 +108,7 @@ body.os-windows {
  * ------------------------
  * scroll style
  * ------------------------
-*/
+ */
 ::-webkit-scrollbar,
 ::-webkit-scrollbar {
   width: 8px !important;
@@ -122,7 +134,7 @@ html * {
  * h1 ~ h6, header
  * p, strong, dl, em, u, kbd, hr, mark
  * -----------------------------------
-*/
+ */
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   line-height: 1.5;
@@ -265,7 +277,7 @@ mark {
  * ------------------------
  * a, link
  * ------------------------
-*/
+ */
 a {
   position: relative;
   font-weight: 500;
@@ -281,7 +293,7 @@ a:hover,
   text-decoration: underline;
   cursor: pointer !important;
 }
-/*以下写法是防止导出pdf时再标题或代码块部分生成链接图标*/
+/* 以下写法是防止导出 pdf 时再标题或代码块部分生成链接图标 */
 #write p a,
 #write table a,
 #write blockquote a,
@@ -344,7 +356,7 @@ a:hover {
  * ------------------------
  * ul, ol
  * ------------------------
-*/
+ */
 ul, ol {
   margin-top: 0;
   margin-bottom: 0;
@@ -407,7 +419,7 @@ li > p {
  * ------------------------
  * image
  * ------------------------
-*/
+ */
 img,
 span.md-image {
   margin: 16px auto 0 auto !important;
@@ -489,7 +501,7 @@ span.md-image span.md-image-pick-file-btn {
  * ------------------------
  * code
  * ------------------------
-*/
+ */
 code {
   border-radius: 4px;
   background: var(--color-1-0-a);
@@ -524,7 +536,7 @@ h4 code {
  * ------------------------
  * pre
  * ------------------------
-*/
+ */
 pre {
   margin-top: 16px;
   margin-bottom: 0;
@@ -557,7 +569,7 @@ pre .CodeMirror-gutters {
  * ------------------------
  * blockquote
  * ------------------------
-*/
+ */
 blockquote,
 .md-alert {
   margin-top: 16px !important;
@@ -624,7 +636,7 @@ blockquote > *:last-child,
  * ------------------------
  * sup, sub, kbd
  * ------------------------
-*/
+ */
 sup, sub {
   font-size: 12px;
 }
@@ -661,7 +673,7 @@ kbd {
  * ------------------------
  * table
  * ------------------------
-*/
+ */
 table,
 figure {
   width: 100%;
@@ -743,7 +755,7 @@ button#md-resize-grid:hover {
  * ------------------------
  * btn
  * ------------------------
-*/
+ */
 .btn,
 .btn-default,
 .long-btn {
@@ -817,7 +829,7 @@ textarea {
  * ------------------------
  * input
  * ------------------------
-*/
+ */
 html input,
 input {
   position: relative;
@@ -841,7 +853,7 @@ input::placeholder {
   color: var(--text-grey) !important;
 }
 
-/*input checkbox*/
+/* input checkbox */
 input[type="checkbox"],
 input[type="radio"] {
   margin-right: 10px !important;
@@ -905,7 +917,7 @@ input[type="radio"]:checked::after {
  * ------------------------
  * header
  * ------------------------
-*/
+ */
 body > header {
   background: var(--bg-color) !important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15) !important;
@@ -916,7 +928,7 @@ body > header {
  * md-htmlblock
  * md-mathblock
  * ------------------------
-*/
+ */
 .md-htmlblock-panel,
 .md-htmlblock-container,
 .md-htmlblock-container .md-htmlblock-panel-placeholder {
@@ -989,7 +1001,7 @@ body > header {
  * ------------------------
  * #write
  * ------------------------
-*/
+ */
 #write {
   margin: 0 auto;
   width: 100%;
@@ -997,8 +1009,8 @@ body > header {
   min-width: 300px;
   padding: 32px 112px;
   overflow: auto;
-  /*  scroll-behavior: smooth;
-    scroll-padding: 16px;*/
+  /* scroll-behavior: smooth; */
+  /* scroll-padding: 16px; */
 }
 #write > *:first-child {
   margin-top: 0;
@@ -1019,7 +1031,7 @@ span.md-comment {
  * ------------------------
  * typora-source
  * ------------------------
-*/
+ */
 #typora-source .CodeMirror-sizer {
   padding-right: 0 !important;
 }
@@ -1073,7 +1085,7 @@ span.md-comment {
  * ------------------------
  * #toc-dropmenu
  * ------------------------
-*/
+ */
 #toc-dropmenu {
   top: calc(var(--title-bar-height) + 8px) !important;
   right: 18px;
@@ -1093,7 +1105,7 @@ span.md-comment {
  * sidebar
  * toc-content
  * ------------------------
-*/
+ */
 .os-windows #sidebar-content {
   margin-top: -1px;
   border-top: 1px solid var(--border-color);
@@ -1318,12 +1330,12 @@ li > .outline-item:hover::before,
  * file-library-list
  * file-library-search-result
  * --------------------------
-*/
+ */
 #file-library-list,
 #file-library-search-result {
   padding: 14px;
 }
-/*ty-search-item*/
+/* ty-search-item */
 #file-library-list .file-list-item,
 #file-library-search-result .ty-search-item {
   margin-bottom: 8px;
@@ -1403,7 +1415,7 @@ li > .outline-item:hover::before,
  * ------------------------
  * file-library-tree
  * ------------------------
-*/
+ */
 #file-library-tree {
   box-sizing: border-box;
   padding-top: 8px;
@@ -1525,7 +1537,7 @@ li > .outline-item:hover::before,
  * ------------------------
  * TOC md-toc
  * ------------------------
-*/
+ */
 .md-toc {
   margin: 16px 0 0 0;
   font-size: 14px;
@@ -1603,7 +1615,7 @@ li > .outline-item:hover::before,
  * ------------------------
  * code colors
  * ------------------------
-*/
+ */
 .cm-s-inner {
   background-color: transparent !important;
   color: var(--text-code);
@@ -1654,7 +1666,7 @@ li > .outline-item:hover::before,
   text-decoration: underline;
   color: var(--text-code) !important;
 }
-/* apply to code fences with plan text*/
+/* apply to code fences with plan text */
 .md-fences {
   background-color: var(--bg-color2);
   color: var(--text-grey);
@@ -1680,7 +1692,7 @@ li > .outline-item:hover::before,
  * unibody-window
  * Control UI on Windows/Linux (optional)
  * --------------------------------------
-*/
+ */
 .unibody-window #write ul,
 .typora-export #write ul {
   padding-left: 34px;
@@ -1823,7 +1835,7 @@ li > .outline-item:hover::before,
   color: var(--color-1) !important;
 }
 
-/*  #megamenu-content, #megamenu-menu-sidebar */
+/* #megamenu-content, #megamenu-menu-sidebar */
 .unibody-window #megamenu-menu-sidebar {
   --bg-color: #1b1b1f;
   --bg-color2: rgb(40, 42, 50);
@@ -2036,7 +2048,7 @@ li > .outline-item:hover::before,
  * UI-controls
  * dialogs
  * ------------------------
-*/
+ */
 .form-control {
   padding: 6px;
 }
@@ -2225,7 +2237,7 @@ footer.ty-footer,
  * ---------------------------------
  * Control UI on Mac (optional)
  * ---------------------------------
-*/
+ */
 .sidebar-tab-btn {
   margin-top: 12px !important;
   color: var(--title-color);
@@ -2306,7 +2318,7 @@ footer.ty-footer,
  * ------------------------
  * .ty-preferences
  * ------------------------
-*/
+ */
 .sidebar {
   position: relative;
 }
@@ -2331,7 +2343,7 @@ footer.ty-footer,
   color: var(--color-2);
 }
 
-/*search style*/
+/* search style */
 #searchpanel-search-group .ty-search-panel-row {
   padding-top: 0;
 }
@@ -2431,7 +2443,7 @@ footer.ty-footer,
  * ------------------------
  * diagram
  * ------------------------
-*/
+ */
 .md-diagram .md-diagram-panel {
   border-radius: 8px;
   border-color: transparent !important;
@@ -2445,7 +2457,7 @@ pre.md-focus .md-diagram-panel {
  * ------------------------
  * export html
  * ------------------------
-*/
+ */
 body.typora-export {
   padding: 0;
 }
@@ -2579,7 +2591,7 @@ body.typora-export {
  * ------------------------
  * @media screen
  * ------------------------
-*/
+ */
 @media screen and (min-width: 1921px) {
   .typora-export-show-outline #write {
     max-width: 1312px;
@@ -2675,7 +2687,7 @@ body.typora-export {
  * ------------------------
  * dark style
  * ------------------------
-*/
+ */
 @media (prefers-color-scheme: dark) {
   /* colors */
   :root {
@@ -2751,7 +2763,7 @@ body.typora-export {
   .export-items-list-control {
     background: var(--bg-color2) !important;
   }
-  /*code colors*/
+  /* code colors */
   .cm-s-inner .cm-header, .cm-s-inner.cm-header {color: #41cce9;}
 
 }
@@ -2760,7 +2772,7 @@ body.typora-export {
  * ------------------------
  * @media print
  * ------------------------
-*/
+ */
 @media print {
   html,
   body,
@@ -2770,7 +2782,7 @@ body.typora-export {
     margin: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important; /*解决浏览器打印只有一页问题*/
+    height: auto !important; /* 解决浏览器打印只有一页问题 */
     padding: 0 !important;
     border: none !important;
   }
@@ -2823,7 +2835,7 @@ body.typora-export {
   @page {
     margin: 15mm !important;
     size: auto;
-    /*谷歌浏览器打印设置*/
+    /* 谷歌浏览器打印设置 */
     @top-center {
       content: '';
       font-size: 9pt;
