@@ -51,7 +51,7 @@
   --item-hover-bg-color: var(--bg-color2);
   --item-hover-text-color: var(--color-1);
   --select-text-bg-color: var(--color-1-0-a);
-  --monospace: "Fira Code", "JetBrains Mono", "Source Code Pro", Consolas, Inconsolata, "Cascadia Code", Monaco, "Ubuntu Mono", monospace;
+  --monospace: "FiraCode Nerd Font", "JetBrains Mono", "Source Code Pro", Consolas, Inconsolata, "Cascadia Code", Monaco, "Ubuntu Mono", monospace;
 
   --mermaid-theme: dark; /* or base, dark, forest, neutral, night */
   --mermaid-font-family: "trebuchet ms", verdana, arial, sans-serif;
